@@ -15,7 +15,7 @@ class CounterLabelView: UIView {
     
     var startValue = 0
     
-    let endValue = 9
+    var endValue = 0
     
     var  animationSubtype = kCATransitionFromTop
     
@@ -24,8 +24,6 @@ class CounterLabelView: UIView {
     override func layoutSubviews() {
         
         counterLabel.text = "\(startValue)";
-        
-        animate(startValue, value: endValue)
     }
 
     
