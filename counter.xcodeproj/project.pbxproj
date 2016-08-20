@@ -64,7 +64,7 @@
 		998181461D6801B700552D5B /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		998181471D6801B700552D5B /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		998181481D6801B700552D5B /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		9981815C1D68028100552D5B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		9981815C1D68028100552D5B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		998181601D6804C500552D5B /* CounterLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterLabelView.swift; sourceTree = "<group>"; };
 		998181621D680B1500552D5B /* WeatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,15 +100,14 @@
 			isa = PBXGroup;
 			children = (
 				998181211D67EE3B00552D5B /* AppDelegate.swift */,
-				998181231D67EE3B00552D5B /* ViewController.swift */,
 				998181621D680B1500552D5B /* WeatherManager.swift */,
+				998181601D6804C500552D5B /* CounterLabelView.swift */,
+				998181231D67EE3B00552D5B /* ViewController.swift */,
 				998181251D67EE3B00552D5B /* Main.storyboard */,
 				998181281D67EE3B00552D5B /* Assets.xcassets */,
 				9981812A1D67EE3B00552D5B /* LaunchScreen.storyboard */,
+				998181641D682C2400552D5B /* Third Party Libraries */,
 				9981812D1D67EE3B00552D5B /* Info.plist */,
-				9981815C1D68028100552D5B /* SwiftyJSON.swift */,
-				998181601D6804C500552D5B /* CounterLabelView.swift */,
-				998181341D6801B700552D5B /* Alamofire */,
 			);
 			path = counter;
 			sourceTree = "<group>";
@@ -137,6 +136,16 @@
 				998181471D6801B700552D5B /* Upload.swift */,
 				998181481D6801B700552D5B /* Validation.swift */,
 			);
+			name = Alamofire;
+			sourceTree = "<group>";
+		};
+		998181641D682C2400552D5B /* Third Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9981815C1D68028100552D5B /* SwiftyJSON.swift */,
+				998181341D6801B700552D5B /* Alamofire */,
+			);
+			name = "Third Party Libraries";
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
