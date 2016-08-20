@@ -68,7 +68,7 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
         
         animation.subtype = animationSubtype
         
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         counterLabel.layer.addAnimation(animation, forKey:"changeTextTransition")
 

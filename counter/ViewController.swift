@@ -62,5 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         WeatherManager.sharedInstance.location = locations.last!
         
     }
+    
+    
 }
 
