@@ -29,7 +29,7 @@ class WeatherManager {
             
             longitude = Float((location?.coordinate.longitude)!)
             
-            startPullingWeatherTest()
+            startPullingWeather()
             
            
         }
@@ -74,13 +74,25 @@ class WeatherManager {
         getWeatherInfo(latitude, lon: longitude)
     }
     
-    @objc func pullWeatherEveryMinuteTest(){
-        
-       
-        currentTemperature = Double(arc4random_uniform(1000))
-    }
+//    @objc func pullWeatherEveryMinuteTest(){
+//        
+//       
+//        currentTemperature = Double(arc4random_uniform(1000))
+//    }
+//    
+//    
     
-    
+//    func startPullingWeatherTest(){
+//
+//        timer.invalidate() // just in case this button is tapped multiple times
+//
+//        // start the timer
+//        timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(pullWeatherEveryMinuteTest), userInfo: nil, repeats: true)
+//
+//        timer.fire()
+//        
+//    }
+
     
      func getWeatherInfo(lat:Float, lon:Float){
         
@@ -124,16 +136,6 @@ class WeatherManager {
     }
     
     
-    func startPullingWeatherTest(){
-        
-        timer.invalidate() // just in case this button is tapped multiple times
-        
-        // start the timer
-        timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(pullWeatherEveryMinuteTest), userInfo: nil, repeats: true)
-        
-        timer.fire()
-        
-    }
     
     
     

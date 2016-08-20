@@ -10,7 +10,6 @@ import UIKit
 
 
 
-
 class CounterLabelView: UIView {
     
     @IBOutlet weak var counterLabel: UILabel!
@@ -25,11 +24,13 @@ class CounterLabelView: UIView {
     
     var counterUnit: Int = 2
     
+    let nc = NSNotificationCenter.defaultCenter()
+    
     override func layoutSubviews() {
         
         counterLabel.text = "0";
     
-        let nc = NSNotificationCenter.defaultCenter()
+      
         nc.addObserver(self,
                        selector: #selector(CounterLabelView.catchNotification),
                        name: "temperatureChanged",
@@ -51,6 +52,7 @@ class CounterLabelView: UIView {
         
     }
     
+
     func animate(){
         
       let animation = CATransition()
@@ -124,6 +126,12 @@ class CounterLabelView: UIView {
         animate()
         
     }
+    
+    deinit{
+        
+        nc.removeObserver(self)
+    }
+    
   
 }
 
