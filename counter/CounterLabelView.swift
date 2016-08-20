@@ -8,7 +8,18 @@
 
 import UIKit
 
-class CounterLabelView: UIView {
+enum CounterUnit:Int {
+    
+    case Units = 0
+    
+    case Tens = 1
+    
+    case Hundreds = 2
+}
+
+
+
+class CounterLabelView: UIView, WeatherManagerDelegate {
     
     @IBOutlet weak var counterLabel: UILabel!
     
@@ -24,6 +35,8 @@ class CounterLabelView: UIView {
     override func layoutSubviews() {
         
         counterLabel.text = "\(startValue)";
+        
+        WeatherManager.sharedInstance.delegate = self
     }
 
     
@@ -75,6 +88,14 @@ class CounterLabelView: UIView {
         
         counterLabel.text = "\(startValue)";
         animate(startValue, value: endValue)
+    }
+    
+    //MARK:Weather Manager Delegate Method
+    
+    func temperatureChanged(temperature: Double) {
+        
+        print(temperature)
+        
     }
   
 }

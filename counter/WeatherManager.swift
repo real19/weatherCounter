@@ -11,12 +11,16 @@ import CoreLocation
 
 
 
+protocol WeatherManagerDelegate {
+    func temperatureChanged(temperature:Double)
+}
+
 
 class WeatherManager {
     
- 
-    
     let API_KEY = "94119cdb330469c2ca464f632adb0f4a"
+    
+    var counterUnit: CounterUnit?
     
     var latitude:Float = 0
     
@@ -33,6 +37,19 @@ class WeatherManager {
         }
     }
     
+    var currentTemperature:Double? {
+        didSet{
+           
+            if currentTemperature != nil && oldValue != currentTemperature{
+                
+                 delegate?.temperatureChanged(currentTemperature!)
+            }
+        }
+    }
+    
+    
+    var delegate:WeatherManagerDelegate?
+    
     
     
     static let sharedInstance = WeatherManager()
@@ -44,7 +61,7 @@ class WeatherManager {
         
         let urlString = "\(baseURLString)?lat=\(lat)&lon=\(lon)&appid=\(API_KEY)"
         
-        request(.GET, urlString).responseJSON { response in
+        request(.GET, urlString).responseJSON {[weak self] response in
             
             switch response.result {
            
@@ -61,14 +78,15 @@ class WeatherManager {
                 
                 let json = JSON(data: dataFromNetworking)
                 
-                guard let temp = json["main"]["temp"].double else {
+                guard let temperature = json["main"]["temp"].double else {
+                  
                     print("error occured while fetching Temperature json[\"main\"][\"temp\"]")
+                    
                     return
                 }
                 
-                print(temp)
-                
-                
+             
+                self?.delegate?.temperatureChanged(temperature)
                
                 
             case .Failure(let error):
