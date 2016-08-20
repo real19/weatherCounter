@@ -12,6 +12,27 @@
 		998181271D67EE3B00552D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998181251D67EE3B00552D5B /* Main.storyboard */; };
 		998181291D67EE3B00552D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998181281D67EE3B00552D5B /* Assets.xcassets */; };
 		9981812C1D67EE3B00552D5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9981812A1D67EE3B00552D5B /* LaunchScreen.storyboard */; };
+		998181491D6801B700552D5B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181361D6801B700552D5B /* Alamofire.swift */; };
+		9981814A1D6801B700552D5B /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181371D6801B700552D5B /* Download.swift */; };
+		9981814B1D6801B700552D5B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181381D6801B700552D5B /* Error.swift */; };
+		9981814C1D6801B700552D5B /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 998181391D6801B700552D5B /* Info-tvOS.plist */; };
+		9981814D1D6801B700552D5B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9981813A1D6801B700552D5B /* Info.plist */; };
+		9981814E1D6801B700552D5B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981813B1D6801B700552D5B /* Manager.swift */; };
+		9981814F1D6801B700552D5B /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981813C1D6801B700552D5B /* MultipartFormData.swift */; };
+		998181501D6801B700552D5B /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981813D1D6801B700552D5B /* NetworkReachabilityManager.swift */; };
+		998181511D6801B700552D5B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981813E1D6801B700552D5B /* Notifications.swift */; };
+		998181521D6801B700552D5B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981813F1D6801B700552D5B /* ParameterEncoding.swift */; };
+		998181531D6801B700552D5B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181401D6801B700552D5B /* Request.swift */; };
+		998181541D6801B700552D5B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181411D6801B700552D5B /* Response.swift */; };
+		998181551D6801B700552D5B /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181421D6801B700552D5B /* ResponseSerialization.swift */; };
+		998181561D6801B700552D5B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181431D6801B700552D5B /* Result.swift */; };
+		998181571D6801B700552D5B /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181441D6801B700552D5B /* ServerTrustPolicy.swift */; };
+		998181581D6801B700552D5B /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181451D6801B700552D5B /* Stream.swift */; };
+		998181591D6801B700552D5B /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181461D6801B700552D5B /* Timeline.swift */; };
+		9981815A1D6801B700552D5B /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181471D6801B700552D5B /* Upload.swift */; };
+		9981815B1D6801B700552D5B /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181481D6801B700552D5B /* Validation.swift */; };
+		9981815D1D68028100552D5B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981815C1D68028100552D5B /* SwiftyJSON.swift */; };
+		998181611D6804C500552D5B /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181601D6804C500552D5B /* Counter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +43,28 @@
 		998181281D67EE3B00552D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9981812B1D67EE3B00552D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9981812D1D67EE3B00552D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		998181351D6801B700552D5B /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		998181361D6801B700552D5B /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		998181371D6801B700552D5B /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		998181381D6801B700552D5B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		998181391D6801B700552D5B /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		9981813A1D6801B700552D5B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9981813B1D6801B700552D5B /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		9981813C1D6801B700552D5B /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		9981813D1D6801B700552D5B /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		9981813E1D6801B700552D5B /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		9981813F1D6801B700552D5B /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		998181401D6801B700552D5B /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		998181411D6801B700552D5B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		998181421D6801B700552D5B /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		998181431D6801B700552D5B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		998181441D6801B700552D5B /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		998181451D6801B700552D5B /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		998181461D6801B700552D5B /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		998181471D6801B700552D5B /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		998181481D6801B700552D5B /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		9981815C1D68028100552D5B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		998181601D6804C500552D5B /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +103,38 @@
 				998181281D67EE3B00552D5B /* Assets.xcassets */,
 				9981812A1D67EE3B00552D5B /* LaunchScreen.storyboard */,
 				9981812D1D67EE3B00552D5B /* Info.plist */,
+				9981815C1D68028100552D5B /* SwiftyJSON.swift */,
+				998181601D6804C500552D5B /* Counter.swift */,
+				998181341D6801B700552D5B /* Alamofire */,
 			);
 			path = counter;
+			sourceTree = "<group>";
+		};
+		998181341D6801B700552D5B /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				998181351D6801B700552D5B /* Alamofire.h */,
+				998181361D6801B700552D5B /* Alamofire.swift */,
+				998181371D6801B700552D5B /* Download.swift */,
+				998181381D6801B700552D5B /* Error.swift */,
+				998181391D6801B700552D5B /* Info-tvOS.plist */,
+				9981813A1D6801B700552D5B /* Info.plist */,
+				9981813B1D6801B700552D5B /* Manager.swift */,
+				9981813C1D6801B700552D5B /* MultipartFormData.swift */,
+				9981813D1D6801B700552D5B /* NetworkReachabilityManager.swift */,
+				9981813E1D6801B700552D5B /* Notifications.swift */,
+				9981813F1D6801B700552D5B /* ParameterEncoding.swift */,
+				998181401D6801B700552D5B /* Request.swift */,
+				998181411D6801B700552D5B /* Response.swift */,
+				998181421D6801B700552D5B /* ResponseSerialization.swift */,
+				998181431D6801B700552D5B /* Result.swift */,
+				998181441D6801B700552D5B /* ServerTrustPolicy.swift */,
+				998181451D6801B700552D5B /* Stream.swift */,
+				998181461D6801B700552D5B /* Timeline.swift */,
+				998181471D6801B700552D5B /* Upload.swift */,
+				998181481D6801B700552D5B /* Validation.swift */,
+			);
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +197,8 @@
 			files = (
 				9981812C1D67EE3B00552D5B /* LaunchScreen.storyboard in Resources */,
 				998181291D67EE3B00552D5B /* Assets.xcassets in Resources */,
+				9981814C1D6801B700552D5B /* Info-tvOS.plist in Resources */,
+				9981814D1D6801B700552D5B /* Info.plist in Resources */,
 				998181271D67EE3B00552D5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +210,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9981815A1D6801B700552D5B /* Upload.swift in Sources */,
+				998181491D6801B700552D5B /* Alamofire.swift in Sources */,
+				9981814E1D6801B700552D5B /* Manager.swift in Sources */,
+				9981815D1D68028100552D5B /* SwiftyJSON.swift in Sources */,
+				998181521D6801B700552D5B /* ParameterEncoding.swift in Sources */,
+				998181581D6801B700552D5B /* Stream.swift in Sources */,
+				998181501D6801B700552D5B /* NetworkReachabilityManager.swift in Sources */,
+				998181561D6801B700552D5B /* Result.swift in Sources */,
+				998181541D6801B700552D5B /* Response.swift in Sources */,
+				998181531D6801B700552D5B /* Request.swift in Sources */,
+				998181511D6801B700552D5B /* Notifications.swift in Sources */,
+				9981814F1D6801B700552D5B /* MultipartFormData.swift in Sources */,
+				998181591D6801B700552D5B /* Timeline.swift in Sources */,
+				9981814A1D6801B700552D5B /* Download.swift in Sources */,
+				9981815B1D6801B700552D5B /* Validation.swift in Sources */,
 				998181241D67EE3B00552D5B /* ViewController.swift in Sources */,
+				9981814B1D6801B700552D5B /* Error.swift in Sources */,
+				998181571D6801B700552D5B /* ServerTrustPolicy.swift in Sources */,
+				998181551D6801B700552D5B /* ResponseSerialization.swift in Sources */,
 				998181221D67EE3B00552D5B /* AppDelegate.swift in Sources */,
+				998181611D6804C500552D5B /* Counter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
