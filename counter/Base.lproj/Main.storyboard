@@ -17,21 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-K6-f4C">
-                                <rect key="frame" x="189.5" y="225" width="221" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-K6-f4C">
+                                <rect key="frame" x="190" y="220" width="221" height="160"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-So-xC1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-So-xC1">
                                         <rect key="frame" x="0.0" y="0.0" width="221" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="221" id="gpy-yZ-oVE"/>
                                             <constraint firstAttribute="height" constant="75" id="hmr-pU-jk1"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="obv-qR-9qU">
-                                        <rect key="frame" x="0.0" y="75" width="221" height="75"/>
+                                        <rect key="frame" x="0.0" y="85" width="221" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="221" id="68s-L2-tMT"/>
                                             <constraint firstAttribute="height" constant="75" id="7ei-OA-Fiv"/>
@@ -83,7 +83,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.26932987242145778" blue="0.33981137345504986" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4d0-K6-f4C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlH-lB-gea"/>
                             <constraint firstItem="4d0-K6-f4C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xKZ-YP-bEM"/>

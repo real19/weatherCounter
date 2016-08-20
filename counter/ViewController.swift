@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
         
         collectionView.clipsToBounds = true
         
-        collectionView.layer.borderWidth = 10.0
+        collectionView.layer.borderWidth = 8.0
         
         collectionView.layer.borderColor = UIColor.blackColor().CGColor
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
         
        location.getLocationName {[weak self] (locationName) in
             
-            self?.label.text = "Weather in City of \(locationName)"
+            self?.label.text = "Weather in \(locationName)"
         }
         
     }
