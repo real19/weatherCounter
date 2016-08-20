@@ -17,55 +17,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="obv-qR-9qU">
-                                <rect key="frame" x="37" y="28" width="263" height="75"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Na-In-53B">
-                                    <size key="itemSize" width="70" height="75"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="M1v-6P-nh5" customClass="CounterCollectionViewCell" customModule="counter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEW-gj-6ez" customClass="CounterLabelView" customModule="counter" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-K6-f4C">
+                                <rect key="frame" x="189.5" y="225" width="221" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-So-xC1">
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221" id="gpy-yZ-oVE"/>
+                                            <constraint firstAttribute="height" constant="75" id="hmr-pU-jk1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="obv-qR-9qU">
+                                        <rect key="frame" x="0.0" y="75" width="221" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221" id="68s-L2-tMT"/>
+                                            <constraint firstAttribute="height" constant="75" id="7ei-OA-Fiv"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9Na-In-53B">
+                                            <size key="itemSize" width="70" height="75"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="M1v-6P-nh5" customClass="CounterCollectionViewCell" customModule="counter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9It-fG-Hqy">
-                                                            <rect key="frame" x="0.0" y="-31" width="70" height="138"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEW-gj-6ez" customClass="CounterLabelView" customModule="counter" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-m2-3mU">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9It-fG-Hqy">
+                                                                    <rect key="frame" x="0.0" y="-31" width="70" height="138"/>
+                                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="52"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="counterLabel" destination="9It-fG-Hqy" id="qrm-IF-k3v"/>
+                                                            </connections>
+                                                        </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <connections>
-                                                        <outlet property="counterLabel" destination="9It-fG-Hqy" id="qrm-IF-k3v"/>
-                                                    </connections>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                                <connections>
+                                                    <outlet property="counterLabelView" destination="lEW-gj-6ez" id="PRl-YU-Z3B"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
                                         <connections>
-                                            <outlet property="counterLabelView" destination="lEW-gj-6ez" id="PRl-YU-Z3B"/>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="UNh-LM-j9F"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="O4t-xg-E7f"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="UNh-LM-j9F"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="O4t-xg-E7f"/>
-                                </connections>
-                            </collectionView>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4d0-K6-f4C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlH-lB-gea"/>
+                            <constraint firstItem="4d0-K6-f4C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xKZ-YP-bEM"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="obv-qR-9qU" id="wys-zH-Hyl"/>
+                        <outlet property="label" destination="6qa-So-xC1" id="2ab-cm-Ogs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,4 +99,7 @@
             <point key="canvasLocation" x="303" y="368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="283" height="286"/>
+    </resources>
 </document>

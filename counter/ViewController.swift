@@ -19,11 +19,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
     var locationManager: CLLocationManager!
     
    
+    @IBOutlet weak var label: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        collectionView.layer.cornerRadius = 19.0
+        
+        collectionView.clipsToBounds = true
+        
+        collectionView.layer.borderWidth = 10.0
+        
+        collectionView.layer.borderColor = UIColor.blackColor().CGColor
         
         startLocationManager()
         
@@ -61,9 +70,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        print("location changed \(locations.last!)")
+        let location = locations.last!
         
-        WeatherManager.sharedInstance.location = locations.last!
+        print("location changed \(location)")
+        
+        WeatherManager.sharedInstance.location = location
+        
+       location.getLocationName {[weak self] (locationName) in
+            
+            self?.label.text = "Weather in City of \(locationName)"
+        }
         
     }
     
