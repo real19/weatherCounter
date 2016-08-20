@@ -68,6 +68,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
 //        print("location changed \(locations.last!)")
+        
+        WeatherManager.sharedInstance.location = locations.last!
+        
     }
 }
 

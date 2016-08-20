@@ -11,9 +11,12 @@ import CoreLocation
 
 
 
+
 class WeatherManager {
     
-   static let API_KEY = "94119cdb330469c2ca464f632adb0f4a"
+ 
+    
+    let API_KEY = "94119cdb330469c2ca464f632adb0f4a"
     
     var latitude:Float = 0
     
@@ -25,15 +28,56 @@ class WeatherManager {
             
             latitude = Float((location?.coordinate.latitude)!)
             longitude = Float((location?.coordinate.longitude)!)
+            
+            getWeatherInfo(latitude, lon: longitude)
         }
     }
     
-    var baseURL = "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=94119cdb330469c2ca464f632adb0f4a"
+    
     
     static let sharedInstance = WeatherManager()
     
     
-    static func getWeatherInfo(lat:Int, lon:Int){
+     func getWeatherInfo(lat:Float, lon:Float){
+        
+        let baseURLString = "http://api.openweathermap.org/data/2.5/weather"
+        
+        let urlString = "\(baseURLString)?lat=\(lat)&lon=\(lon)&appid=\(API_KEY)"
+        
+        request(.GET, urlString).responseJSON { response in
+            
+            switch response.result {
+           
+            case .Success:
+               
+               
+                
+                guard let dataFromNetworking = response.data else {
+                    
+                     print("data could not be returned")
+                   
+                    return
+                }
+                
+                let json = JSON(data: dataFromNetworking)
+                
+                guard let temp = json["main"]["temp"].double else {
+                    print("error occured while fetching Temperature json[\"main\"][\"temp\"]")
+                    return
+                }
+                
+                print(temp)
+                
+                
+               
+                
+            case .Failure(let error):
+                print("Response was NOT Successful \(error)")
+            }
+            
+            
+            
+        }
         
         
     
