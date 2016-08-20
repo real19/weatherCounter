@@ -21,8 +21,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
-        
         startLocationManager()
         
         
@@ -36,7 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.requestAlwaysAuthorization()
         
-        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,23 +49,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
            
             //
             
-            guard let counterLabelView = counterLabelView else {
-                return
-            }
-            
-            counterLabelView.startValue = 0
-            
-            counterLabelView.endValue = 9
-            
-            counterLabelView.animate( counterLabelView.startValue, value: counterLabelView.endValue)
-            
-            print("location authorization changed \(status)")
+              print("location authorization changed \(status)")
+
+          
         }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-//        print("location changed \(locations.last!)")
+        print("location changed \(locations.last!)")
         
         WeatherManager.sharedInstance.location = locations.last!
         

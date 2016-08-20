@@ -10,7 +10,6 @@ import Foundation
 import CoreLocation
 
 
-
 protocol WeatherManagerDelegate {
     func temperatureChanged(temperature:Double)
 }
@@ -26,14 +25,19 @@ class WeatherManager {
     
     var longitude:Float = 0
     
+    var timer = NSTimer()
+    
     var location:CLLocation? {
        
         didSet{
             
             latitude = Float((location?.coordinate.latitude)!)
+            
             longitude = Float((location?.coordinate.longitude)!)
             
-            getWeatherInfo(latitude, lon: longitude)
+            startPullingWeather()
+            
+           
         }
     }
     
@@ -41,6 +45,8 @@ class WeatherManager {
         didSet{
            
             if currentTemperature != nil && oldValue != currentTemperature{
+                
+                 print("temprature changed \(currentTemperature!)")
                 
                  delegate?.temperatureChanged(currentTemperature!)
             }
@@ -50,14 +56,33 @@ class WeatherManager {
     
     var delegate:WeatherManagerDelegate?
     
-    
+    let baseURLString = "http://api.openweathermap.org/data/2.5/weather"
     
     static let sharedInstance = WeatherManager()
     
     
+    
+    func startPullingWeather(){
+        
+        timer.invalidate() // just in case this button is tapped multiple times
+        
+        // start the timer
+        timer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(pullWeatherEveryMinute), userInfo: nil, repeats: true)
+        
+        timer.fire()
+    }
+    
+    
+    @objc func pullWeatherEveryMinute(){
+        
+        getWeatherInfo(latitude, lon: longitude)
+    }
+    
+    
+    
      func getWeatherInfo(lat:Float, lon:Float){
         
-        let baseURLString = "http://api.openweathermap.org/data/2.5/weather"
+        
         
         let urlString = "\(baseURLString)?lat=\(lat)&lon=\(lon)&appid=\(API_KEY)"
         
@@ -67,11 +92,9 @@ class WeatherManager {
            
             case .Success:
                
-               
-                
-                guard let dataFromNetworking = response.data else {
+               guard let dataFromNetworking = response.data else {
                     
-                     print("data could not be returned")
+                     print("data could not be found")
                    
                     return
                 }
@@ -80,26 +103,28 @@ class WeatherManager {
                 
                 guard let temperature = json["main"]["temp"].double else {
                   
-                    print("error occured while fetching Temperature json[\"main\"][\"temp\"]")
+                    print("error occured while fetching Temperature")
                     
                     return
                 }
-                
-             
-                self?.delegate?.temperatureChanged(temperature)
                
+               
+             
+                self?.currentTemperature = temperature
                 
             case .Failure(let error):
+               
                 print("Response was NOT Successful \(error)")
             }
-            
-            
-            
+ 
         }
-        
-        
     
     }
+    
+    
+    
+    
+    
     
 }
     

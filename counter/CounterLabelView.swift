@@ -30,17 +30,19 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
     
     var  animationSubtype = kCATransitionFromTop
     
-    
+    var counterUnit: CounterUnit? = .Hundreds
     
     override func layoutSubviews() {
         
-        counterLabel.text = "\(startValue)";
+        counterLabel.text = "";
         
         WeatherManager.sharedInstance.delegate = self
     }
 
     
-    func animate(newValue:Int, value:Int ){
+    func animate(){
+        
+        print(startValue)
         
         counterLabel.layer.removeAllAnimations()
         
@@ -50,7 +52,7 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
         
         animation.removedOnCompletion = false
         
-        animation.duration = 1
+        animation.duration = 1/Double(startValue - endValue)
         
         animation.type = kCATransitionPush
         
@@ -69,32 +71,63 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         counterLabel.layer.addAnimation(animation, forKey:"changeTextTransition")
-        
-        counterLabel.layer
+
     }
     
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         
+        animate()
+   
         if (endValue > startValue){
             
             startValue += 1
+       
         } else if (endValue < startValue){
             
             startValue -= 1
-        }
-        else {
+            
+        } else {
+            
             return
         }
         
         counterLabel.text = "\(startValue)";
-        animate(startValue, value: endValue)
+       
     }
     
     //MARK:Weather Manager Delegate Method
     
     func temperatureChanged(temperature: Double) {
         
-        print(temperature)
+    
+        
+        
+        let tempratureString = String(Int(temperature))
+        
+            print("the temperature recieved was " + tempratureString)
+        
+        var tempratureStringArray = tempratureString.characters.map { String($0) }
+        
+        
+        guard let index:Int = counterUnit?.rawValue else {
+            return
+        }
+        
+
+        
+      
+    
+        guard let changeToValue = Int(tempratureStringArray[index]) else {
+            
+            return
+        }
+        
+        endValue = changeToValue
+        
+
+        print(endValue)
+        
+        animate()
         
     }
   
