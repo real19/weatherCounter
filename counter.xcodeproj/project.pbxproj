@@ -34,6 +34,7 @@
 		9981815D1D68028100552D5B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9981815C1D68028100552D5B /* SwiftyJSON.swift */; };
 		998181611D6804C500552D5B /* CounterLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181601D6804C500552D5B /* CounterLabelView.swift */; };
 		998181631D680B1500552D5B /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181621D680B1500552D5B /* WeatherManager.swift */; };
+		998181661D68D1BD00552D5B /* CounterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181651D68D1BD00552D5B /* CounterCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		9981815C1D68028100552D5B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		998181601D6804C500552D5B /* CounterLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterLabelView.swift; sourceTree = "<group>"; };
 		998181621D680B1500552D5B /* WeatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		998181651D68D1BD00552D5B /* CounterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				998181211D67EE3B00552D5B /* AppDelegate.swift */,
 				998181621D680B1500552D5B /* WeatherManager.swift */,
 				998181601D6804C500552D5B /* CounterLabelView.swift */,
+				998181651D68D1BD00552D5B /* CounterCollectionViewCell.swift */,
 				998181231D67EE3B00552D5B /* ViewController.swift */,
 				998181251D67EE3B00552D5B /* Main.storyboard */,
 				998181281D67EE3B00552D5B /* Assets.xcassets */,
@@ -241,6 +244,7 @@
 				998181241D67EE3B00552D5B /* ViewController.swift in Sources */,
 				9981814B1D6801B700552D5B /* Error.swift in Sources */,
 				998181571D6801B700552D5B /* ServerTrustPolicy.swift in Sources */,
+				998181661D68D1BD00552D5B /* CounterCollectionViewCell.swift in Sources */,
 				998181551D6801B700552D5B /* ResponseSerialization.swift in Sources */,
 				998181221D67EE3B00552D5B /* AppDelegate.swift in Sources */,
 				998181611D6804C500552D5B /* CounterLabelView.swift in Sources */,

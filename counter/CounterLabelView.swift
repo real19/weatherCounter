@@ -8,21 +8,14 @@
 
 import UIKit
 
-enum CounterUnit:Int {
-    
-    case Units = 0
-    
-    case Tens = 1
-    
-    case Hundreds = 2
-}
 
 
 
-class CounterLabelView: UIView, WeatherManagerDelegate {
+class CounterLabelView: UIView {
     
     @IBOutlet weak var counterLabel: UILabel!
     
+    var index:Int = 0
     
     var startValue = 0
     
@@ -30,29 +23,43 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
     
     var  animationSubtype = kCATransitionFromTop
     
-    var counterUnit: CounterUnit? = .Hundreds
+    var counterUnit: Int = 2
     
     override func layoutSubviews() {
         
-        counterLabel.text = "";
+        counterLabel.text = "0";
+    
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self,
+                       selector: #selector(CounterLabelView.catchNotification),
+                       name: "temperatureChanged",
+                       object: nil)
         
-        WeatherManager.sharedInstance.delegate = self
+        
     }
 
+    func catchNotification(notification:NSNotification) -> Void {
+        
+        
+        guard let userInfo = notification.userInfo,
+            let temperature  = userInfo["temperature"] as? Double else {
+                print("No userInfo found in notification")
+                return
+        }
+     
+        temperatureChanged(temperature)
+        
+    }
     
     func animate(){
         
-        print(startValue)
-        
-        counterLabel.layer.removeAllAnimations()
-        
-        let animation = CATransition()
+      let animation = CATransition()
         
         animation.delegate = self
         
         animation.removedOnCompletion = false
         
-        animation.duration = 1/Double(startValue - endValue)
+        animation.duration = 0.25
         
         animation.type = kCATransitionPush
         
@@ -70,11 +77,17 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
         
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
+        counterLabel.layer.removeAllAnimations()
+        
         counterLabel.layer.addAnimation(animation, forKey:"changeTextTransition")
 
     }
     
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+       
+        if (startValue == endValue) {
+            return
+        }
         
         animate()
    
@@ -86,9 +99,6 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
             
             startValue -= 1
             
-        } else {
-            
-            return
         }
         
         counterLabel.text = "\(startValue)";
@@ -98,35 +108,19 @@ class CounterLabelView: UIView, WeatherManagerDelegate {
     //MARK:Weather Manager Delegate Method
     
     func temperatureChanged(temperature: Double) {
+       
+        let temperatureInt:Int = Int(temperature)
         
-    
-        
-        
-        let tempratureString = String(Int(temperature))
-        
-            print("the temperature recieved was " + tempratureString)
+       let tempratureString =  String(format: "%03d", temperatureInt)
         
         var tempratureStringArray = tempratureString.characters.map { String($0) }
         
-        
-        guard let index:Int = counterUnit?.rawValue else {
-            return
-        }
-        
-
-        
-      
-    
         guard let changeToValue = Int(tempratureStringArray[index]) else {
-            
             return
         }
         
         endValue = changeToValue
-        
 
-        print(endValue)
-        
         animate()
         
     }

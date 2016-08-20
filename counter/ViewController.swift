@@ -10,11 +10,15 @@ import UIKit
 import CoreLocation
 
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate , UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var counterLabelView: CounterLabelView!
     
+    @IBOutlet weak var collectionView:UICollectionView!
+    
     var locationManager: CLLocationManager!
+    
+   
     
     
     override func viewDidLoad() {
@@ -63,6 +67,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CounterCollectionViewCell
+        
+        cell.counterLabelView.index = indexPath.item
+        
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
 }
 

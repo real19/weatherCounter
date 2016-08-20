@@ -10,17 +10,11 @@ import Foundation
 import CoreLocation
 
 
-protocol WeatherManagerDelegate {
-    func temperatureChanged(temperature:Double)
-}
-
 
 class WeatherManager {
     
     let API_KEY = "94119cdb330469c2ca464f632adb0f4a"
-    
-    var counterUnit: CounterUnit?
-    
+ 
     var latitude:Float = 0
     
     var longitude:Float = 0
@@ -35,27 +29,29 @@ class WeatherManager {
             
             longitude = Float((location?.coordinate.longitude)!)
             
-            startPullingWeather()
+            startPullingWeatherTest()
             
            
         }
     }
+    
+    let notificationCenter = NSNotificationCenter.defaultCenter()
     
     var currentTemperature:Double? {
         didSet{
            
             if currentTemperature != nil && oldValue != currentTemperature{
                 
-                 print("temprature changed \(currentTemperature!)")
+                 print("temprature changed  to \(currentTemperature!)")
                 
-                 delegate?.temperatureChanged(currentTemperature!)
+         notificationCenter.postNotificationName("temperatureChanged",
+                                        object: nil,
+                                        userInfo: ["temperature":currentTemperature!])
             }
         }
     }
     
-    
-    var delegate:WeatherManagerDelegate?
-    
+ 
     let baseURLString = "http://api.openweathermap.org/data/2.5/weather"
     
     static let sharedInstance = WeatherManager()
@@ -76,6 +72,12 @@ class WeatherManager {
     @objc func pullWeatherEveryMinute(){
         
         getWeatherInfo(latitude, lon: longitude)
+    }
+    
+    @objc func pullWeatherEveryMinuteTest(){
+        
+       
+        currentTemperature = Double(arc4random_uniform(1000))
     }
     
     
@@ -122,7 +124,16 @@ class WeatherManager {
     }
     
     
-    
+    func startPullingWeatherTest(){
+        
+        timer.invalidate() // just in case this button is tapped multiple times
+        
+        // start the timer
+        timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(pullWeatherEveryMinuteTest), userInfo: nil, repeats: true)
+        
+        timer.fire()
+        
+    }
     
     
     
