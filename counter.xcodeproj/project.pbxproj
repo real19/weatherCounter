@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9953DF841D696FAD00118B1A /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9953DF831D696FAD00118B1A /* screenshot.png */; };
 		998181221D67EE3B00552D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181211D67EE3B00552D5B /* AppDelegate.swift */; };
 		998181241D67EE3B00552D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998181231D67EE3B00552D5B /* ViewController.swift */; };
 		998181271D67EE3B00552D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998181251D67EE3B00552D5B /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		9953DF811D69690E00118B1A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9953DF831D696FAD00118B1A /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = SOURCE_ROOT; };
 		9981811E1D67EE3B00552D5B /* counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998181211D67EE3B00552D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		998181231D67EE3B00552D5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				998181671D68EDC800552D5B /* Extensions.swift */,
 				998181281D67EE3B00552D5B /* Assets.xcassets */,
 				9981812A1D67EE3B00552D5B /* LaunchScreen.storyboard */,
+				9953DF831D696FAD00118B1A /* screenshot.png */,
 				998181641D682C2400552D5B /* Third Party Libraries */,
 				9981812D1D67EE3B00552D5B /* Info.plist */,
 			);
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9981812C1D67EE3B00552D5B /* LaunchScreen.storyboard in Resources */,
+				9953DF841D696FAD00118B1A /* screenshot.png in Resources */,
 				998181291D67EE3B00552D5B /* Assets.xcassets in Resources */,
 				9981814C1D6801B700552D5B /* Info-tvOS.plist in Resources */,
 				9981814D1D6801B700552D5B /* Info.plist in Resources */,
