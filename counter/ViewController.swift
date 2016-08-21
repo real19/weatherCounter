@@ -78,7 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
         
        location.getLocationName {[weak self] (locationName) in
             
-            self?.label.text = "Weather in \(locationName)"
+            self?.label.text = "\(locationName)"
         }
         
     }
