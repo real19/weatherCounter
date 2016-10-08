@@ -19,16 +19,16 @@ class WeatherManager {
 
     let notificationCenter = NotificationCenter.default
     
-    var currentTemperature:Double? {
+    var currentValue:Double? {
         didSet{
            
-            if currentTemperature != nil && oldValue != currentTemperature{
+            if currentValue != nil && oldValue != currentValue{
                 
-                 print("temprature changed  to \(currentTemperature!)")
+                 print("temprature changed  to \(currentValue!)")
                 
-         notificationCenter.post(name: Notification.Name(rawValue: "temperatureChanged"),
+         notificationCenter.post(name: Notification.Name(rawValue: "valueChanged"),
                                         object: nil,
-                                        userInfo: ["temperature":currentTemperature!])
+                                        userInfo: ["value":currentValue!])
             }
         }
     }
@@ -44,7 +44,7 @@ class WeatherManager {
     @objc func pullWeatherEveryMinuteTest(){
         
        
-        currentTemperature = Double(arc4random_uniform(1000))
+        currentValue = Double(arc4random_uniform(1000))
     }
     
     

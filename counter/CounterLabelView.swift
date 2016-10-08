@@ -33,7 +33,7 @@ class CounterLabelView: UIView, CAAnimationDelegate {
       
         nc.addObserver(self,
                        selector: #selector(CounterLabelView.catchNotification),
-                       name: NSNotification.Name(rawValue: "temperatureChanged"),
+                       name: NSNotification.Name(rawValue: "valueChanged"),
                        object: nil)
         
         
@@ -43,12 +43,12 @@ class CounterLabelView: UIView, CAAnimationDelegate {
         
         
         guard let userInfo = (notification as NSNotification).userInfo,
-            let temperature  = userInfo["temperature"] as? Double else {
+            let value  = userInfo["value"] as? Double else {
                 print("No userInfo found in notification")
                 return
         }
      
-        temperatureChanged(temperature)
+        valueChanged(value)
         
     }
     
@@ -109,11 +109,11 @@ class CounterLabelView: UIView, CAAnimationDelegate {
     
     //MARK:Weather Manager Delegate Method
     
-    func temperatureChanged(_ temperature: Double) {
+    func valueChanged(_ value: Double) {
        
-        let temperatureInt:Int = Int(temperature)
+        let valueInt:Int = Int(value)
         
-       let tempratureString =  String(format: "%03d", temperatureInt)
+       let tempratureString =  String(format: "%03d", valueInt)
         
         var tempratureStringArray = tempratureString.characters.map { String($0) }
         
