@@ -13,7 +13,7 @@ import CoreLocation
 public extension CLLocation {
     
     
-    func getLocationName(completion:((locationName:String)-> Void)){
+    func getLocationName(_ completion:@escaping ((_ locationName:String)-> Void)){
         
         CLGeocoder().reverseGeocodeLocation(self) {(placemarks, error) -> Void in
             
@@ -21,7 +21,7 @@ public extension CLLocation {
                 
                 let placemark: CLPlacemark  =  thePlacemarks[0]
                 
-                completion(locationName: placemark.getLocationNameString() as String)
+                completion(placemark.getLocationNameString() as String)
                 
             }
             
@@ -49,6 +49,6 @@ public extension CLPlacemark{
         let  locationString = locality  + administrativeArea + country
         
         
-        return locationString
+        return locationString as NSString
     }
 }

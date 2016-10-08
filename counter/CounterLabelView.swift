@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class CounterLabelView: UIView {
+class CounterLabelView: UIView, CAAnimationDelegate {
     
     @IBOutlet weak var counterLabel: UILabel!
     
@@ -24,7 +24,7 @@ class CounterLabelView: UIView {
     
     var counterUnit: Int = 2
     
-    let nc = NSNotificationCenter.defaultCenter()
+    let nc = NotificationCenter.default
     
     override func layoutSubviews() {
         
@@ -33,16 +33,16 @@ class CounterLabelView: UIView {
       
         nc.addObserver(self,
                        selector: #selector(CounterLabelView.catchNotification),
-                       name: "temperatureChanged",
+                       name: NSNotification.Name(rawValue: "temperatureChanged"),
                        object: nil)
         
         
     }
 
-    func catchNotification(notification:NSNotification) -> Void {
+    func catchNotification(_ notification:Notification) -> Void {
         
         
-        guard let userInfo = notification.userInfo,
+        guard let userInfo = (notification as NSNotification).userInfo,
             let temperature  = userInfo["temperature"] as? Double else {
                 print("No userInfo found in notification")
                 return
@@ -59,9 +59,9 @@ class CounterLabelView: UIView {
         
         animation.delegate = self
         
-        animation.removedOnCompletion = false
+        animation.isRemovedOnCompletion = false
         
-        animation.duration = 0.25
+        animation.duration = 0.10
         
         animation.type = kCATransitionPush
         
@@ -81,11 +81,11 @@ class CounterLabelView: UIView {
         
         counterLabel.layer.removeAllAnimations()
         
-        counterLabel.layer.addAnimation(animation, forKey:"changeTextTransition")
+        counterLabel.layer.add(animation, forKey:"changeTextTransition")
 
     }
     
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
        
         if (startValue == endValue) {
             return
@@ -109,7 +109,7 @@ class CounterLabelView: UIView {
     
     //MARK:Weather Manager Delegate Method
     
-    func temperatureChanged(temperature: Double) {
+    func temperatureChanged(_ temperature: Double) {
        
         let temperatureInt:Int = Int(temperature)
         

@@ -32,23 +32,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
         
         collectionView.layer.borderWidth = 8.0
         
-        collectionView.layer.borderColor = UIColor.blackColor().CGColor
+        collectionView.layer.borderColor = UIColor.black.cgColor
         
-        startLocationManager()
+        WeatherManager.sharedInstance.startPullingWeatherTest()
         
         
     }
     
-    func startLocationManager(){
-        
-        locationManager = CLLocationManager()
-        
-        locationManager.delegate = self
-        
-        locationManager.requestAlwaysAuthorization()
-        
-        locationManager.startMonitoringSignificantLocationChanges()
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,47 +46,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate , UICollection
     }
 
     
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
-           
-            //
-            
-              print("location authorization changed \(status)")
 
-          
-        }
-    }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let location = locations.last!
-        
-        print("location changed \(location)")
-        
-        WeatherManager.sharedInstance.location = location
-        
-       location.getLocationName {[weak self] (locationName) in
-            
-            self?.label.text = "\(locationName)"
-        }
-        
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CounterCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CounterCollectionViewCell
         
-        cell.counterLabelView.index = indexPath.item
+        cell.counterLabelView.index = (indexPath as NSIndexPath).item
         
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
